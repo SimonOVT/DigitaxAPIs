@@ -6,6 +6,8 @@ namespace DigitaxM750API.Controllers
     /// <summary>
     /// Menu 40: AMC Homing System
     /// </summary>
+    [ApiController]
+    [Route("[controller]")]
     public class HomingSystemController : ControllerBase
     {
         /// <summary>

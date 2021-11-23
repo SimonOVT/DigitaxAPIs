@@ -39,7 +39,7 @@ namespace DigitaxM750API.Controllers
         {
             var connection = ModbusSocket.GetConnection(hostIp, port);
             var telegram = new Telegram();
-            var result = telegram.Write32Bit(connection.socket, AddressConst.ProfileAcceleration, value);
+            var result = telegram.Write32Bit(connection.socket, AddressConst.PositionReference, value);
             return result;
         }
 
