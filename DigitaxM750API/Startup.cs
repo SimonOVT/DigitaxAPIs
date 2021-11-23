@@ -41,7 +41,7 @@ namespace DigitaxM750API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, Microsoft.AspNetCore.Hosting.IApplicationLifetime applicationLifetime)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IHostApplicationLifetime applicationLifetime)
         {
             if (env.IsDevelopment())
             {
@@ -60,7 +60,7 @@ namespace DigitaxM750API
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
 
-        private void OnShutdown()
+        private static void OnShutdown()
         {
             ModbusSocket.CLoseAll();
         }
