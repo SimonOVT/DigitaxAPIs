@@ -157,21 +157,20 @@ namespace DigitaxM750API.Controllers
             var result = telegram.ReadBool(connection.socket, AddressConst.HomeComplete);
             return result;
         }
-
+        
         /// <summary>
-        /// 40.005<br />
-        /// AMC Home Complete
+        /// 40.008<br />
+        /// AMC Home Offset Complete
         /// </summary>
         /// <param name="hostIp">Ip Address of the Digitax M750 controller</param>
         /// <param name="port">Port of the Digitax M750 controller</param>
-        /// <param name="value">Indicates that home to switch or home to freeze has been completed.</param>
-        /// <returns>True if value was written</returns>
-        [HttpPut("HomeComplete/{hostIp}/{port}")]
-        public bool SetHomeComplete(string hostIp, int port, [FromBody] bool value)
+        /// <returns>Indicates that the system has reached the home offset position.</returns>
+        [HttpGet("HomeOffsetComplete/{hostIp}/{port}")]
+        public bool GetHomeOffsetComplete(string hostIp, int port)
         {
             var connection = ModbusSocket.GetConnection(hostIp, port);
             var telegram = new Telegram();
-            var result = telegram.WriteBool(connection.socket, AddressConst.HomeComplete, value);
+            var result = telegram.ReadBool(connection.socket, AddressConst.HomeComplete);
             return result;
         }
     }

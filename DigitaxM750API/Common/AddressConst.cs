@@ -6,6 +6,18 @@ namespace DigitaxM750API.Common
         /// 34.003<br />
         /// AMC Position Reference
         /// </summary>
+        public static readonly byte[] DriveEnable = { 6, 15 };
+
+        /// <summary>
+        /// 34.003<br />
+        /// AMC Position Reference
+        /// </summary>
+        public static readonly byte[] RunForward = { 6, 30 };
+
+        /// <summary>
+        /// 34.003<br />
+        /// AMC Position Reference
+        /// </summary>
         public static readonly byte[] PositionReference = { 34, 3 };
 
         /// <summary>
