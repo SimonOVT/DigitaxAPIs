@@ -170,7 +170,7 @@ namespace DigitaxM750API.Controllers
         {
             var connection = ModbusSocket.GetConnection(hostIp, port);
             var telegram = new Telegram();
-            var result = telegram.ReadBool(connection.socket, AddressConst.HomeComplete);
+            var result = telegram.ReadBool(connection.socket, AddressConst.HomeOffsetComplete);
             return result;
         }
     }
