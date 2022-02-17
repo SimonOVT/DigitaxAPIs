@@ -121,5 +121,11 @@ namespace DigitaxM750API.Common
         /// AMC Movement Complete Flag
         /// </summary>
         public static readonly byte[] MovementCompleteFlag = { 41, 4 };
+
+        /// <summary>
+        /// 41.017<br />
+        /// AAMC Home Required Flag
+        /// </summary>
+        public static readonly byte[] HomeRequiredFlag = { 41, 17 };
     }
 }

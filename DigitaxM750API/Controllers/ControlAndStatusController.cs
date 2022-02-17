@@ -91,5 +91,21 @@ namespace DigitaxM750API.Controllers
             var result = telegram.ReadBool(connection.socket, AddressConst.MovementCompleteFlag);
             return result;
         }
+
+        /// <summary>
+        /// 41.017<br />
+        /// AMC Home Required Flag
+        /// </summary>
+        /// <param name="hostIp">Ip Address of the Digitax M750 controller</param>
+        /// <param name="port">Port of the Digitax M750 controller</param>
+        /// <returns>True if movement is completed</returns>
+        [HttpGet("HomeRequiredFlag/{hostIp}/{port}")]
+        public bool GetHomeRequiredFlag(string hostIp, int port)
+        {
+            var connection = ModbusSocket.GetConnection(hostIp, port);
+            var telegram = new Telegram();
+            var result = telegram.ReadBool(connection.socket, AddressConst.HomeRequiredFlag);
+            return result;
+        }
     }
 }
